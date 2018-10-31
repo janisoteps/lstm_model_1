@@ -1,0 +1,174 @@
+Vocabulary Size: 4004
+Total Sequences: 661434
+Max Sequence Length: 25
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+embedding_1 (Embedding)      (None, 24, 100)           400400
+_________________________________________________________________
+bidirectional_1 (Bidirection (None, 24, 400)           481600
+_________________________________________________________________
+batch_normalization_1 (Batch (None, 24, 400)           1600
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 24, 400)           0
+_________________________________________________________________
+bidirectional_2 (Bidirection (None, 24, 400)           961600
+_________________________________________________________________
+batch_normalization_2 (Batch (None, 24, 400)           1600
+_________________________________________________________________
+dropout_2 (Dropout)          (None, 24, 400)           0
+_________________________________________________________________
+bidirectional_3 (Bidirection (None, 400)               961600
+_________________________________________________________________
+batch_normalization_3 (Batch (None, 400)               1600
+_________________________________________________________________
+dropout_3 (Dropout)          (None, 400)               0
+_________________________________________________________________
+dense_1 (Dense)              (None, 4004)              1605604
+_________________________________________________________________
+activation_1 (Activation)    (None, 4004)              0
+=================================================================
+Total params: 4,415,604
+Trainable params: 4,413,204
+Non-trainable params: 2,400
+_________________________________________________________________
+None
+Epoch 1/50
+
+Epoch 50/50
+661434/661434 [==============================] - 158s 239us/step - loss: 2.0637 - acc: 0.5453
+
+red tape brogues in
+lace up trainers in
+mini fisherman beanie in
+push up no wire
+black leather watch and
+striped wide leg trousers
+floral print frill detail
+
+
+
+
+
+
+
+
+
+
+
+Vocabulary Size: 4004
+Total Sequences: 1328224
+Max Sequence Length: 31
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+embedding_1 (Embedding)      (None, 30, 100)           400400    
+_________________________________________________________________
+bidirectional_1 (Bidirection (None, 30, 400)           481600    
+_________________________________________________________________
+batch_normalization_1 (Batch (None, 30, 400)           1600      
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 30, 400)           0         
+_________________________________________________________________
+bidirectional_2 (Bidirection (None, 30, 400)           961600    
+_________________________________________________________________
+batch_normalization_2 (Batch (None, 30, 400)           1600      
+_________________________________________________________________
+dropout_2 (Dropout)          (None, 30, 400)           0         
+_________________________________________________________________
+bidirectional_3 (Bidirection (None, 400)               961600    
+_________________________________________________________________
+batch_normalization_3 (Batch (None, 400)               1600      
+_________________________________________________________________
+dropout_3 (Dropout)          (None, 400)               0         
+_________________________________________________________________
+dense_1 (Dense)              (None, 4004)              1605604   
+_________________________________________________________________
+activation_1 (Activation)    (None, 4004)              0         
+=================================================================
+Total params: 4,415,604
+Trainable params: 4,413,204
+Non-trainable params: 2,400
+_________________________________________________________________
+None
+Epoch 1/100
+1328224/1328224 [==============================] - 392s 295us/step - loss: 1.8157 - acc: 0.5962
+Epoch 99/100
+1328224/1328224 [==============================] - 392s 295us/step - loss: 1.8118 - acc: 0.5968
+Epoch 100/100
+1328224/1328224 [==============================] - 392s 295us/step - loss: 1.8107 - acc: 0.5974
+red valentino floral print skirt
+lace up boots in black
+mini rodini print t shirt
+push up bra black white
+bra sports bra black white
+black and white check
+striped jumper jumpers knitwear
+floral print t shirt
+polka dot print scarf scarves
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Vocabulary Size: 4004
+Total Sequences: 1327149
+Max Sequence Length: 27
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+embedding_1 (Embedding)      (None, 26, 50)            200200    
+_________________________________________________________________
+bidirectional_1 (Bidirection (None, 26, 600)           842400    
+_________________________________________________________________
+batch_normalization_1 (Batch (None, 26, 600)           2400      
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 26, 600)           0         
+_________________________________________________________________
+bidirectional_2 (Bidirection (None, 26, 600)           2162400   
+_________________________________________________________________
+batch_normalization_2 (Batch (None, 26, 600)           2400      
+_________________________________________________________________
+dropout_2 (Dropout)          (None, 26, 600)           0         
+_________________________________________________________________
+bidirectional_3 (Bidirection (None, 600)               2162400   
+_________________________________________________________________
+batch_normalization_3 (Batch (None, 600)               2400      
+_________________________________________________________________
+dropout_3 (Dropout)          (None, 600)               0         
+_________________________________________________________________
+dense_1 (Dense)              (None, 4004)              2406404   
+_________________________________________________________________
+activation_1 (Activation)    (None, 4004)              0         
+=================================================================
+Total params: 7,781,004
+Trainable params: 7,777,404
+Non-trainable params: 3,600
+_________________________________________________________________
+None
+Epoch 1/150
+
+1327149/1327149 [==============================] - 552s 416us/step - loss: 1.5549 - acc: 0.6363
+Epoch 150/150
+1327149/1327149 [==============================] - 552s 416us/step - loss: 1.5544 - acc: 0.6361
+red tape chelsea boots in
+lace up boots in black
+mini skirt with curved hem
+push up bra black white
+bra sports bra urban heather
+black leather derby shoes with
+striped jumper art navy blue
+floral print midi dress with
+polka dot bow tie blouse
+
+
