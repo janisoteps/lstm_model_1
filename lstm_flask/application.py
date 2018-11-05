@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request
 import jsonlines
-import random
-import json
+# import random
+# import json
 import pickle
 # import nltk
 from keras.models import load_model
@@ -11,7 +11,7 @@ import tensorflow as tf
 sess = tf.Session()
 
 
-sim_word_file = jsonlines.open('/Users/jdo/dev/data/garms_nlp/data/word_suggestions_3.jsonl')
+sim_word_file = jsonlines.open('word_suggestions_3.jsonl')
 sim_word_dict = {}  # Structure: key: [[word,sim,count],...]
 for sim_word in sim_word_file:
     sim_word_dict[sim_word['word']] = sim_word['similar_words']
@@ -45,6 +45,7 @@ def generate_seq(seq_model, seq_tokenizer, max_len, seed_text, n_words):
 
     print(f'words: {words}')
     uniq_words = uniq_list(words)
+    
     output = ' '.join(uniq_words)
 
     return output, uniq_words
@@ -58,7 +59,7 @@ def uniq_list(seq):
 
 # # # # API Functions # # # #
 @app.route("/api/sequences", methods=["POST"])
-def features():
+def sequences():
     if request.method == "POST":
         req_data = request.get_json(force=True)
         print(req_data)
@@ -97,10 +98,10 @@ def features():
             return res
 
 
-handle = open('/Users/jdo/dev/data/garms_nlp/lstm_model/v_ubuntu_3/tokenizer_10.pickle', 'rb')
+handle = open('tokenizer_10.pickle', 'rb')
 tokenizer = pickle.load(handle)
 
-inspire_model = load_model('/Users/jdo/dev/data/garms_nlp/lstm_model/v_ubuntu_3/garms_nlp_model_10.h5')
+inspire_model = load_model('garms_nlp_model_10.h5')
 inspire_model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 print('Model loaded')
 
@@ -109,8 +110,8 @@ graph = tf.get_default_graph()
 
 # if this is the main thread of execution first load the model and
 # then start the server
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, threaded=True)
-
 # if __name__ == "__main__":
-#     app.run(host="0.0.0.0", port=80)
+#     app.run(host="0.0.0.0", port=5000, threaded=True)
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=80)
