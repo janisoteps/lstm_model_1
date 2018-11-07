@@ -72,26 +72,26 @@ def sequences():
 
         with graph.as_default():
             if input_word_count == 1:
-                main_pred, main_pred_list = generate_seq(inspire_model, tokenizer, 27 - 1, sanitized_string, 4)
-                update_word = main_pred_list[-4]
-            else:
                 main_pred, main_pred_list = generate_seq(inspire_model, tokenizer, 27 - 1, sanitized_string, 3)
                 update_word = main_pred_list[-3]
+            else:
+                main_pred, main_pred_list = generate_seq(inspire_model, tokenizer, 27 - 1, sanitized_string, 2)
+                update_word = main_pred_list[-2]
 
             similar_words = sim_word_dict[update_word]
             top_3_sim_words = [x[0] for x in similar_words[:3]]
             print(f'top 3 sim words: {top_3_sim_words}')
             if input_word_count == 1:
-                sim_suggestion_list = [' '.join(main_pred_list[:-4]) + ' ' + x for x in top_3_sim_words]
-            else:
                 sim_suggestion_list = [' '.join(main_pred_list[:-3]) + ' ' + x for x in top_3_sim_words]
+            else:
+                sim_suggestion_list = [' '.join(main_pred_list[:-2]) + ' ' + x for x in top_3_sim_words]
             print('Sim suggestion list:')
             print(sim_suggestion_list)
 
             if input_word_count == 1:
-                sim_pred = [generate_seq(inspire_model, tokenizer, 27 - 1, x, 3)[0] for x in sim_suggestion_list]
-            else:
                 sim_pred = [generate_seq(inspire_model, tokenizer, 27 - 1, x, 2)[0] for x in sim_suggestion_list]
+            else:
+                sim_pred = [generate_seq(inspire_model, tokenizer, 27 - 1, x, 1)[0] for x in sim_suggestion_list]
             print(f'main pred: {main_pred}, sim pred: {sim_pred}')
             # Make it HTTP friendly
             res = jsonify(main_pred=main_pred, sim_pred=sim_pred)
